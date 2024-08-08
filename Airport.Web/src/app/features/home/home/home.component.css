@@ -1,0 +1,45 @@
+.jumbotron {
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #cecece, #6f6f6f);
+  color: white;
+}
+.card-header {
+  font-weight: bold;
+}
+.card-body {
+  padding: 1.5rem;
+}
+.card-hover {
+  transition: box-shadow 0.3s ease-in-out;
+}
+.card-hover:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.card-hover {
+  transition: all 0.3s ease;
+}
+.foreground {
+  color: #212529;
+}
+.background {
+  background-color: #212529;
+}
+.card-hover:hover {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+.card-border {
+  border: 1px solid #212529;
+}
+.card-hover:hover .card-header {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+.card-hover:hover .card-body {
+  background-color: #ffffff;
+  color: #6c757d;
+}
+.card-hover:hover .card-border {
+  border-color: #6c757d;
+}

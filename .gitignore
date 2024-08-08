@@ -1,0 +1,49 @@
+# Ignore build and package directories
+bin/
+obj/
+out/
+debug/
+release/
+dist/
+node_modules/
+packages/
+.vscode/
+.idea/
+.DS_Store
+.vs/
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+*.ncrunchsolution
+*.vscode
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.sln.docstates
+
+# Ignore test results
+TestResults/
+
+# Ignore VS Code settings and workspace files
+.vscode/
+
+# Ignore macOS-specific files
+.DS_Store
+
+# Ignore Windows-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore specific files in Airport.Web
+Airport.Web/.gitignore
+Airport.Web/README.md

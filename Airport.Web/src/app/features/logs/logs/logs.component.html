@@ -1,0 +1,50 @@
+<div class="logs-container text-center fs-5">
+  <div class="btn-group" role="group" aria-label="Log type toggles">
+    <button
+      type="button"
+      class="btn btn-secondary fs-5"
+      [class.active]="activeLogType === 'assignedFlightsLogs'"
+      (click)="toggleLogType('assignedFlightsLogs')"
+    >
+      Moving Flights Logs
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary fs-5"
+      [class.active]="activeLogType === 'waitingFlightsLogs'"
+      (click)="toggleLogType('waitingFlightsLogs')"
+    >
+      Waiting Flights Logs
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary fs-5"
+      [class.active]="activeLogType === 'unassignedFlightsLogs'"
+      (click)="toggleLogType('unassignedFlightsLogs')"
+    >
+      Unassigned Flights Logs
+    </button>
+  </div>
+  <div class="mt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="row bg-light font-weight-bold border">
+          <div class="col-md-3 p-2 border-right">Log</div>
+          <div class="col-md-2 p-2 border-right">Flight</div>
+          <div class="col-md-3 p-2">Leg</div>
+          <div class="col-md-4 p-2 border-right">Time</div>
+        </div>
+      </div>
+    </div>
+    <app-log-entry
+      *ngFor="
+        let log of displayedLogs
+          | paginate : { itemsPerPage: 12, currentPage: page }
+      "
+      [log]="log"
+    ></app-log-entry>
+    <div class="pagination">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

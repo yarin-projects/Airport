@@ -1,0 +1,14 @@
+<div class="leg-container my-5 text-center fs-3">
+  <div class="row">
+    <div class="col-12">
+      <div class="row bg-light font-weight-bold border">
+        <div class="col-md-2 p-2 border-right">Leg</div>
+        <div class="col-md-2 p-2 border-right">Crossing Time</div>
+        <div class="col-md-3 p-2 border-right">Leg Type</div>
+        <div class="col-md-3 p-2 border-right">Flight Number</div>
+        <div class="col-md-2 p-2 border-right">Flight Type</div>
+      </div>
+    </div>
+    <app-leg-entry style="padding: 0;" *ngFor="let leg of legs" [leg]="leg"></app-leg-entry>
+  </div>
+</div>

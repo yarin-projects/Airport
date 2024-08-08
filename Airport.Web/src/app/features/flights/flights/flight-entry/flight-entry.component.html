@@ -1,0 +1,36 @@
+
+  <div class="col-12" >
+    <!-- Table headers for Moving Flights -->
+    <div *ngIf="activeFlightType === 'movingFlights'" [style.background-color]="flight.flightId === 0 ? 'white' : flight.isDone ? 'greenyellow' : flight.flightStatus === 0 ? 'yellow' : 'orange'" class="row border">
+      <div class="col-md-2 p-2 border-right">{{ getFlightId() }}</div>
+      <div class="col-md-3 p-2 border-right">{{ flight.number.substring(0, 18) }}</div>
+      <div class="col-md-3 p-2">{{ flight.model }}</div>
+      <div class="col-md-1 p-2 border-right">{{ flight.passengersCount }}</div>
+      <div class="col-md-2 p-2 border-right" [style.background-color]="
+      flight.isDone || flight.flightId === 0 ? (flight.flightStatus === 0 ? 'yellow' : 'orange') : ''
+    ">{{ flightStatusLabels[flight.flightStatus] }}</div>
+      <div class="col-md-1 p-2 border-right">{{  "Leg " + flight.legId }}</div>
+    </div>
+    
+    <!-- Table headers for Completed Flights -->
+    <div *ngIf="activeFlightType === 'completedFlights'" class="row border" [style.background-color]="flight.flightId === 0 ? 'white' : flight.isDone ? 'greenyellow' : flight.flightStatus === 0 ? 'yellow' : 'orange'">
+      <div class="col-md-2 p-2 border-right">{{ getFlightId() }}</div>
+      <div class="col-md-2 p-2 border-right">{{ flight.number.substring(0, 18) }}</div>
+      <div class="col-md-2 p-2">{{ flight.model }}</div>
+      <div class="col-md-1 p-2 border-right">{{ flight.passengersCount }}</div>
+      <div class="col-md-2 p-2 border-right" [style.background-color]="
+      flight.isDone || flight.flightId === 0 ? (flight.flightStatus === 0 ? 'yellow' : 'orange') : ''
+    ">{{ flightStatusLabels[flight.flightStatus] }}</div>
+      <div class="col-md-3 p-2 border-right">{{ getFlightTimeCompleted() }}</div>
+    </div>
+    
+    <!-- Table headers for Unassigned Flights -->
+    <div *ngIf="activeFlightType === 'unassignedFlights'" class="row border" [style.background-color]="flight.flightId === 0 ? 'white' : flight.isDone ? 'greenyellow' : flight.flightStatus === 0 ? 'yellow' : 'orange'">
+      <div class="col-md-3 p-2 border-right">{{ flight.number.substring(0, 18) }}</div>
+      <div class="col-md-3 p-2">{{ flight.model }}</div>
+      <div class="col-md-3 p-2 border-right">{{ flight.passengersCount }}</div>
+      <div class="col-md-3 p-2 border-right"  [style.background-color]="flight.isDone || flight.flightId === 0 ? (flight.flightStatus === 0 ? 'yellow' : 'orange') : ''">
+        {{ flightStatusLabels[flight.flightStatus] }}
+      </div>
+    </div>
+  </div>

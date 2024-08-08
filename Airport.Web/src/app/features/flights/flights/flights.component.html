@@ -1,0 +1,69 @@
+<div class="flights-container text-center fs-5">
+  <div class="btn-group" role="group" aria-label="Flight type toggles">
+    <button
+      type="button"
+      class="btn btn-secondary fs-5"
+      [class.active]="activeFlightType === 'movingFlights'"
+      (click)="toggleFlightType('movingFlights')"
+    >
+      Moving Flights
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary fs-5"
+      [class.active]="activeFlightType === 'completedFlights'"
+      (click)="toggleFlightType('completedFlights')"
+    >
+      Completed Flights
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary fs-5"
+      [class.active]="activeFlightType === 'unassignedFlights'"
+      (click)="toggleFlightType('unassignedFlights')"
+    >
+      Unassigned Flights
+    </button>
+  </div>
+  <div class="mt-3">
+    <div class="row">
+      <div class="col-12">
+        <!-- Table headers for Moving Flights -->
+        <div *ngIf="activeFlightType === 'movingFlights'" class="row bg-light font-weight-bold border">
+          <div class="col-md-2 p-2 border-right">Flight ID</div>
+          <div class="col-md-3 p-2 border-right">Flight Number</div>
+          <div class="col-md-3 p-2">Model</div>
+          <div class="col-md-1 p-2 border-right">Passengers</div>
+          <div class="col-md-2 p-2 border-right">Flight Status</div>
+          <div class="col-md-1 p-2 border-right">Leg</div>
+        </div>
+        
+        <!-- Table headers for Completed Flights -->
+        <div *ngIf="activeFlightType === 'completedFlights'" class="row bg-light font-weight-bold border">
+          <div class="col-md-2 p-2 border-right">Flight ID</div>
+          <div class="col-md-2 p-2 border-right">Flight Number</div>
+          <div class="col-md-2 p-2">Model</div>
+          <div class="col-md-1 p-2 border-right">Passengers</div>
+          <div class="col-md-2 p-2 border-right">Flight Status</div>
+          <div class="col-md-3 p-2 border-right">Time Completed</div>
+        </div>
+        
+        <!-- Table headers for Unassigned Flights -->
+        <div *ngIf="activeFlightType === 'unassignedFlights'" class="row bg-light font-weight-bold border">
+          <div class="col-md-3 p-2 border-right">Flight Number</div>
+          <div class="col-md-3 p-2">Model</div>
+          <div class="col-md-3 p-2 border-right">Passengers</div>
+          <div class="col-md-3 p-2 border-right">Flight Status</div>
+        </div>
+      </div>
+    </div>
+    <app-flight-entry
+      *ngFor="let flight of displayedFlights | paginate : { itemsPerPage: itemsPerPage, currentPage: page }"
+      [flight]="flight"
+      [activeFlightType]="activeFlightType"
+    ></app-flight-entry>
+    <div class="pagination">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

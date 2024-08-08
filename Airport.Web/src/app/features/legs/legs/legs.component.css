@@ -1,0 +1,11 @@
+
+.leg-container {
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #d5d6d7; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+

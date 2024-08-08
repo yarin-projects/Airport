@@ -1,0 +1,7 @@
+.nav-link.active {
+  color: deepskyblue;
+}
+.navbar-brand {
+  color: black;
+  font-weight: 500;
+}

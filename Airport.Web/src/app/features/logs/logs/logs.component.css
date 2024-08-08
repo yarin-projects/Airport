@@ -1,0 +1,23 @@
+.logs-container {
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #d5d6d7; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.pagination {
+  display: inline-table;
+  width: 100%;
+  margin: auto;
+}
+.btn-secondary {
+  background-color: rgb(175, 175, 175);
+  border-color: rgb(175, 175, 175);
+}
+
+.btn-secondary.active {
+  background-color: rgb(99, 99, 99);
+  border-color: rgb(99, 99, 99);
+}

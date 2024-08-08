@@ -1,0 +1,26 @@
+<div
+  class="col-12"
+  [style.background-color]="
+    leg.isOccupied
+      ? leg.flight.flightStatus === 0
+        ? 'yellow'
+        : 'orange'
+      : 'white'
+  "
+>
+  <div class="row border">
+    <div class="col-md-2 p-2 border-right">Leg {{ leg.legId }}</div>
+    <div class="col-md-2 p-2 border-right">
+      {{ leg.crossingTime | timespan }}
+    </div>
+    <div class="col-md-3 p-2">
+      {{ legTypeLabels[leg.legType] }}
+    </div>
+    <div class="col-md-3 p-2 border-right">
+      {{ leg.flightId ? "Flight-" + leg.flightId : "" }}
+    </div>
+    <div class="col-md-2 p-2 border-right">
+      {{ leg.flight ? flightStatusLabels[leg.flight.flightStatus] : "" }}
+    </div>
+  </div>
+</div>
