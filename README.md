@@ -4,6 +4,8 @@
 
 The Airport Management System is designed to manage an airport's flight operations, including flight movements through various legs (sections) of the airport. The system comprises multiple services and controllers that handle the flight lifecycle, from arrival to departure.
 
+The project was completed on 5th August, 2024.
+
 ### Key Components
 
 - **FlightMovementService**
